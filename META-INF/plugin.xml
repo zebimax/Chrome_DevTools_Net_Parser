@@ -2,10 +2,11 @@
   <id>com.github.zebimax.apps.intellij.plugin.chromedevtoolsnetparser</id>
   <name>Chrome_DevTools_Net_Parser</name>
   <version>1.0</version>
-  <vendor email="zebimax@gmail.com" url="http://github.com/zebimaxm">Zebimax</vendor>
+  <vendor email="zebimax@gmail.com" url="http://github.com/zebimax">Zebimax</vendor>
 
   <description><![CDATA[
       Plugin for parse Chrome DevTools net requests to xml files
+      use Ctrl + Alt + Minus
     ]]></description>
 
   <change-notes><![CDATA[]]>
@@ -34,6 +35,12 @@
 
   <actions>
     <!-- Add your actions here -->
+      <group id="ChromeDevToolsNetParser.Menu" text="_Chrome Parser Menu" description="Chrome Net Requests Parser">
+          <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ToolsMenu"/>
+          <action id="ChromeDevToolsNetParser.ParsePlainTextRequestWindow" class="com.github.zebimax.chromeNetParser.NetParserAction" text="NetParser">
+              <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt MINUS"/>
+          </action>
+      </group>
   </actions>
 
 </idea-plugin>
